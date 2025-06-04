@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan - BPBD Kolaka Utara</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <img src="assets/images/Lambang_Kabupaten_Kolaka_Utara.png" alt="Logo BPBD" class="logo">
+    <h1>Layanan BPBD Kolaka Utara</h1>
+    <p>Badan Penanggulangan Bencana Daerah</p>
+  </header>
+  <button id="toggle-theme" aria-label="Toggle Theme" style="position: absolute; top: 24px; right: 32px; z-index: 2000;">
+    <i class="fa fa-moon"></i>
+  </button>
+  <nav class="sticky-nav">
+    <a href="index.html"><i class="fa fa-home"></i> Beranda</a>
+    <a href="profil.html"><i class="fa fa-user"></i> Profil</a>
+    <a href="layanan.html"><i class="fa fa-cogs"></i> Layanan</a>
+    <a href="#"><i class="fa fa-newspaper"></i> Berita</a>
+    <a href="#"><i class="fa fa-envelope"></i> Kontak</a>
+  </nav>
+  <main class="content">
+    <h2>Layanan Kami</h2>
+    <div class="layanan-grid">
+      <div class="layanan-item">
+        <i class="fa fa-info-circle"></i>
+        <h3>Informasi & Edukasi Kebencanaan</h3>
+        <p>Menyediakan informasi, edukasi, dan sosialisasi terkait mitigasi dan penanggulangan bencana kepada masyarakat.</p>
+      </div>
+      <div class="layanan-item">
+        <i class="fa fa-ambulance"></i>
+        <h3>Penanganan Darurat Bencana</h3>
+        <p>Respon cepat terhadap kejadian bencana, termasuk evakuasi, pertolongan pertama, dan distribusi bantuan darurat.</p>
+      </div>
+      <div class="layanan-item">
+        <i class="fa fa-hands-helping"></i>
+        <h3>Pelaporan & Koordinasi Bantuan</h3>
+        <p>Menerima laporan bencana dan mengkoordinasikan bantuan dengan instansi terkait serta relawan.</p>
+      </div>
+      <div class="layanan-item">
+        <i class="fa fa-users"></i>
+        <h3>Pelatihan Relawan</h3>
+        <p>Menyelenggarakan pelatihan dan pembinaan relawan untuk meningkatkan kesiapsiagaan dan kemampuan penanggulangan bencana.</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="sosmed">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    &copy; 2025 BPBD Kabupaten Kolaka Utara. All rights reserved.
+  </footer>
+  <script>
+    const toggleButton = document.getElementById("toggle-theme");
+    const root = document.documentElement;
+    const icon = toggleButton.querySelector("i");
+
+    // Cek dan apply preferensi dari localStorage
+    if (localStorage.getItem("theme") === "dark") {
+      root.classList.add("dark");
+      icon.classList.replace("fa-moon", "fa-sun");
+    }
+
+    toggleButton.addEventListener("click", () => {
+      root.classList.toggle("dark");
+      const isDark = root.classList.contains("dark");
+      icon.classList.replace(isDark ? "fa-moon" : "fa-sun", isDark ? "fa-sun" : "fa-moon");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>

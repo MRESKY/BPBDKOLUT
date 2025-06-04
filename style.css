@@ -175,3 +175,83 @@ footer .sosmed a:hover {
     font-size: 0.9rem;
   }
 }
+
+
+/* tema laman berita */
+
+.berita-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.berita-item {
+  background-color: #fff;
+  padding: 20px;
+  border-left: 6px solid midnightblue;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.berita-item h3 {
+  margin-bottom: 5px;
+  color: midnightblue;
+}
+
+.berita-tanggal {
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.berita-item a {
+  color: midnightblue;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+/* kontak */
+
+.kontak-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.kontak-form {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.kontak-form input,
+.kontak-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.kontak-form button {
+  padding: 10px;
+  border: none;
+  background-color: midnightblue;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.kontak-form button:hover {
+  background-color: #1a1a80;
+}
+
+.kontak-info {
+  flex: 1;
+  min-width: 300px;
+}

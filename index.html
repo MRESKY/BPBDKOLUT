@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPBD Kabupaten Kolaka Utara</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <img src="assets/images/Lambang_Kabupaten_Kolaka_Utara.png" alt="Logo BPBD" class="logo">
+        <h1>BPBD Kabupaten Kolaka Utara</h1>
+        <p>Badan Penanggulangan Bencana Daerah</p>
+    </header>
+    <button id="toggle-theme" aria-label="Toggle Theme" style="position: absolute; top: 24px; right: 32px; z-index: 2000;">
+      <i class="fa fa-moon"></i>
+    </button>
+    <nav class="sticky-nav">
+        <a href="#"><i class="fa fa-home"></i> Beranda</a>
+        <a href="#"><i class="fa fa-user"></i> Profil</a>
+        <a href="#"><i class="fa fa-cogs"></i> Layanan</a>
+        <a href="#"><i class="fa fa-newspaper"></i> Berita</a>
+        <a href="#"><i class="fa fa-envelope"></i> Kontak</a>
+    </nav>
+    <section class="hero">
+        <div class="hero-overlay">
+            <h2>Siap Tanggap Bencana, Untuk Kolaka Utara Lebih Aman</h2>
+            <p>Bersama masyarakat membangun ketangguhan menghadapi bencana.</p>
+            <a href="#" class="cta-btn">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+    <section class="content">
+        <h3>Tentang BPBD Kolaka Utara</h3>
+        <p>
+            BPBD Kabupaten Kolaka Utara bertugas dalam penanggulangan bencana secara terencana, terkoordinasi, dan
+            terpadu. Kami berkomitmen memberikan pelayanan terbaik kepada masyarakat dalam menghadapi dan mengurangi
+            risiko bencana.
+        </p>
+        <h3>Layanan Kami</h3>
+        <div class="layanan-grid">
+            <div class="layanan-item">
+                <i class="fa fa-info-circle"></i>
+                <span>Informasi & Edukasi Kebencanaan</span>
+            </div>
+            <div class="layanan-item">
+                <i class="fa fa-ambulance"></i>
+                <span>Penanganan Darurat Bencana</span>
+            </div>
+            <div class="layanan-item">
+                <i class="fa fa-hands-helping"></i>
+                <span>Pelaporan & Koordinasi Bantuan</span>
+            </div>
+            <div class="layanan-item">
+                <i class="fa fa-users"></i>
+                <span>Pelatihan Relawan</span>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="sosmed">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        &copy; 2025 BPBD Kabupaten Kolaka Utara. All rights reserved.
+    </footer>
+    <script>
+  const toggleButton = document.getElementById("toggle-theme");
+  const root = document.documentElement;
+  const icon = toggleButton.querySelector("i");
+
+  // Cek dan apply preferensi dari localStorage
+  if (localStorage.getItem("theme") === "dark") {
+    root.classList.add("dark");
+    icon.classList.replace("fa-moon", "fa-sun");
+  }
+
+  toggleButton.addEventListener("click", () => {
+    root.classList.toggle("dark");
+    const isDark = root.classList.contains("dark");
+    icon.classList.replace(isDark ? "fa-moon" : "fa-sun", isDark ? "fa-sun" : "fa-moon");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+</script>
+</body>
+
+</html>
